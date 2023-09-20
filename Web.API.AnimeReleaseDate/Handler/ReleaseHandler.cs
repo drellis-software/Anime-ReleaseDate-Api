@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Web.API.AnimeReleaseDate.Models;
-using Web.ReleaseDate.WebScraper;
+using Web.ReleaseDate.WebScraper.Model;
 
 namespace Web.API.AnimeReleaseDate.Handler
 {

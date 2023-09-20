@@ -18,7 +18,7 @@ namespace WebsiteStatusAPI.Controllers
         }
 
         [HttpGet("{title}")]
-        public async Task<IActionResult> Get([FromRoute] string title)
+        public async Task<IActionResult> GetReleaseDates([FromRoute] string title)
         {
             if (string.IsNullOrWhiteSpace(title))
             {
@@ -27,12 +27,7 @@ namespace WebsiteStatusAPI.Controllers
 
             var result = await _mediator.Send(new GetShowName(title));
 
-            if (result.Title is null)
-            {
-                return NotFound(new { ErrorMessage = "Title not found" });
-            }
-
-            return Ok(result);
+            return result.Title is null ? NotFound(new { ErrorMessage = "Title not found" }) : Ok(result);
         }
     }
 }

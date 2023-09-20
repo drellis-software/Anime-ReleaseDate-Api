@@ -14,4 +14,10 @@
     <ProjectReference Include="..\Web.Release.WebScraper\Web.Release.WebScraper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Responses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Responses\" />
+  </ItemGroup>
 </Project>
